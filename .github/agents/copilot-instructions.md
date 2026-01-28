@@ -80,7 +80,7 @@ Build Minds is a **static website** for a software house targeting Italian PMIs 
 - **Anchors for sections**: Use `id="section-name"` for deep linking from other pages
 - **Always include**: Meta charset UTF-8, viewport, title, description, keywords, favicon link
 - **CTA buttons**: Use `class="btn btn-primary"` or `class="btn btn-secondary"`
-- **Placeholder text**: Marked as `+39 XXX XXX XXXX`, `XXXXXXXXXXX` for P.IVA (see README for full list)
+- **Placeholder text**: Marked as `+39 352 047 6725`, `XXXXXXXXXXX` for P.IVA (see README for full list)
 
 ### CSS
 - **Selectors**: Class-based (no IDs for styling)
@@ -131,7 +131,7 @@ Build Minds is a **static website** for a software house targeting Italian PMIs 
 
 ### Updating Business Info
 Search for + replace across ALL files:
-- `+39 XXX XXX XXXX` → actual phone
+- `+39 352 047 6725` → actual phone
 - `XXXXXXXXXXX` → P.IVA
 - `buildminds@pec.it` → real PEC email
 - `info@buildminds.it` → real contact email

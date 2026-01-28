@@ -33,7 +33,7 @@ build-minds-website/
 Prima di pubblicare, sostituisci i placeholder:
 
 **In tutti i file HTML:**
-- `+39 XXX XXX XXXX` → numero di telefono reale
+- `+39 352 047 6725` → numero di telefono reale
 - `XXXXXXXXXXX` → P.IVA e Codice Fiscale reali
 - `buildminds@pec.it` → indirizzo PEC reale
 - `MB-XXXXXX` → numero Registro Imprese reale
