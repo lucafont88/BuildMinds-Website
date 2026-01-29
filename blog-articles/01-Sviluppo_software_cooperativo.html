@@ -1,91 +1,199 @@
-<html>
-    <head>
-        <title>Sviluppo software cooperativo</title>
-        
-    </head>
-    <body>
-        <h1>6 Idee Controintuitive che Trasformeranno il Vostro Flusso di Sviluppo Software</h1>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Idee Controintuitive per lo Sviluppo Software | Build Minds</title>
+    <meta name="description" content="Scopri 6 principi controintuitivi che trasformeranno il flusso di sviluppo software del tuo team: dalla promozione degli artifact al Trunk-Based Development.">
+    <meta name="keywords" content="sviluppo software, DevOps, CI/CD, trunk-based development, architettura software, best practices">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/jpeg" href="../logo-512-negative.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <img src="../logo-512.jpg" alt="Build Minds Logo">
+                    <span>Build Minds</span>
+                </a>
 
-Introduzione
+                <button class="mobile-menu-toggle" aria-label="Menu">&#9776;</button>
 
-Nello sviluppo software collaborativo, le sfide sono all'ordine del giorno. Conflitti di merge che bloccano interi team, il classico problema del "funziona sulla mia macchina" che trasforma i rilasci in un terno al lotto e cicli di rilascio lenti che faticano a tenere il passo con le esigenze del business. Questi ostacoli sono così comuni che molti team li considerano un costo inevitabile del lavoro di gruppo.
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../servizi.html">Servizi</a></li>
+                        <li><a href="../chi-siamo.html">Chi Siamo</a></li>
+                        <li><a href="../blog.html" class="active">Blog</a></li>
+                        <li><a href="../contatti.html" class="cta-header">Contatti</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-Esistono innumerevoli "best practice" che promettono di risolvere questi problemi, ma spesso si rivelano cerimonie complesse che aggiungono più attrito che valore. La verità è che alcune delle idee più potenti per ottimizzare il flusso di lavoro sono quelle meno ovvie, talvolta controintuitive. Si tratta di principi che mettono in discussione le convenzioni consolidate per favorire un approccio più snello, sicuro e scalabile.
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>6 Idee Controintuitive che Trasformeranno il Vostro Flusso di Sviluppo Software</h1>
+            <p>Principi dirompenti per portare ordine, velocita e qualita nel lavoro di team</p>
+        </div>
+    </section>
 
-Questo articolo esplora sei di questi principi dirompenti, derivati da metodologie d'élite e team ad alte prestazioni. Dalla gestione degli artefatti alla strategia di branching, passando per l'architettura del software e la documentazione, queste idee sono progettate per portare ordine, velocità e qualità nel vostro lavoro, trasformando le sfide quotidiane in vantaggi competitivi.
+    <!-- Article Content -->
+    <section class="section">
+        <div class="container">
+            <div class="article-content">
+                <a href="../blog.html" class="back-to-blog">&larr; Torna al Blog</a>
 
+                <div class="article-meta">
+                    <p>10 Dicembre 2025 | 6 min lettura</p>
+                </div>
 
---------------------------------------------------------------------------------
+                <h2>Introduzione</h2>
 
+                <p>Nello sviluppo software collaborativo, le sfide sono all'ordine del giorno. Conflitti di merge che bloccano interi team, il classico problema del "funziona sulla mia macchina" che trasforma i rilasci in un terno al lotto e cicli di rilascio lenti che faticano a tenere il passo con le esigenze del business. Questi ostacoli sono cosi comuni che molti team li considerano un costo inevitabile del lavoro di gruppo.</p>
 
-Le 6 Idee Controintuitive
+                <p>Esistono innumerevoli "best practice" che promettono di risolvere questi problemi, ma spesso si rivelano cerimonie complesse che aggiungono piu attrito che valore. La verita e che alcune delle idee piu potenti per ottimizzare il flusso di lavoro sono quelle meno ovvie, talvolta controintuitive. Si tratta di principi che mettono in discussione le convenzioni consolidate per favorire un approccio piu snello, sicuro e scalabile.</p>
 
-1. Promuovete gli Artifact, Non Ricostruiteli Mai
+                <p>Questo articolo esplora sei di questi principi dirompenti, derivati da metodologie d'elite e team ad alte prestazioni. Dalla gestione degli artefatti alla strategia di branching, passando per l'architettura del software e la documentazione, queste idee sono progettate per portare ordine, velocita e qualita nel vostro lavoro, trasformando le sfide quotidiane in vantaggi competitivi.</p>
 
-La pratica comune in molti team è quella di ricostruire il codice sorgente per ogni ambiente: una build per lo sviluppo, una per il testing (QA) e un'altra, finale, per la produzione. Sebbene sembri un approccio logico, nasconde un rischio enorme. Ogni build, anche se eseguita a pochi minuti di distanza, può produrre un risultato diverso a causa di variazioni ambientali, versioni del compilatore o aggiornamenti silenti delle dipendenze. Questo introduce sfiducia nella pipeline: il binario che avete faticosamente testato in QA non è lo stesso che state rilasciando ai vostri utenti.
+                <h2>Le 6 Idee Controintuitive</h2>
 
-Il principio "promote, never rebuild" capovolge questa logica, basandosi sui concetti di immutabilità e fiducia. L'idea è semplice: un artefatto binario (come un'immagine Docker o un file JAR) viene costruito una sola volta. Se supera i test nell'ambiente di sviluppo, quello stesso, identico artefatto viene "promosso" all'ambiente di QA. Se supera i test di QA, viene promosso in produzione. Promuovere un artefatto è un atto di fiducia nel proprio processo di testing. Ricostruirlo è ammettere che il processo stesso è inaffidabile. Questo approccio garantisce l'assoluta integrità del software, eliminando un'intera classe di bug imprevedibili e rappresenta una pratica critica per i team DevOps maturi.
+                <h3>1. Promuovete gli Artifact, Non Ricostruiteli Mai</h3>
 
-2. La Vostra Architettura Deve Isolare il Business, Non il Database
+                <p>La pratica comune in molti team e quella di ricostruire il codice sorgente per ogni ambiente: una build per lo sviluppo, una per il testing (QA) e un'altra, finale, per la produzione. Sebbene sembri un approccio logico, nasconde un rischio enorme. Ogni build, anche se eseguita a pochi minuti di distanza, puo produrre un risultato diverso a causa di variazioni ambientali, versioni del compilatore o aggiornamenti silenti delle dipendenze. Questo introduce sfiducia nella pipeline: il binario che avete faticosamente testato in QA non e lo stesso che state rilasciando ai vostri utenti.</p>
 
-Per decenni, le architetture software sono state costruite attorno al database. Questa visione non è solo superata, ma pericolosa, perché lega l'asset più prezioso e duraturo — la logica di business — a quello più effimero e sostituibile: la tecnologia. Le tecnologie (database, framework, UI) hanno un ciclo di vita breve, mentre le regole di business fondamentali persistono. L'idea controintuitiva, formalizzata da pattern come l'Architettura Esagonale e la Clean Architecture, è che l'architettura deve proteggere l'asset di valore da quelli usa e getta.
+                <p>Il principio "promote, never rebuild" capovolge questa logica, basandosi sui concetti di immutabilita e fiducia. L'idea e semplice: un artefatto binario (come un'immagine Docker o un file JAR) viene costruito una sola volta. Se supera i test nell'ambiente di sviluppo, quello stesso, identico artefatto viene "promosso" all'ambiente di QA. Se supera i test di QA, viene promosso in produzione. Promuovere un artefatto e un atto di fiducia nel proprio processo di testing. Ricostruirlo e ammettere che il processo stesso e inaffidabile. Questo approccio garantisce l'assoluta integrita del software, eliminando un'intera classe di bug imprevedibili e rappresenta una pratica critica per i team DevOps maturi.</p>
 
-* Il modello Ports and Adapters (Architettura Esagonale) immagina il core dell'applicazione come un esagono che comunica con il mondo esterno tramite "porte" (interfacce astratte). Il database e l'interfaccia utente sono semplicemente "adattatori" che si collegano a queste porte, ma il core rimane agnostico.
-* La Regola della Dipendenza della Clean Architecture è ancora più esplicita: le dipendenze puntano sempre verso l'interno. Gli strati esterni (UI, DB) dipendono dagli strati interni (Casi d'Uso, Entità), ma mai il contrario. Il business non deve sapere nulla dell'infrastruttura.
+                <h3>2. La Vostra Architettura Deve Isolare il Business, Non il Database</h3>
 
-Un esempio pratico chiarisce il potere di questo approccio. Immaginate di dover migrare da PostgreSQL a un database NoSQL. In un'architettura tradizionale, questo richiederebbe modifiche profonde in tutto il sistema. Con un'architettura pulita, il team deve solo scrivere un nuovo "adattatore" per il database nello strato più esterno. La logica di business, il vero patrimonio aziendale, rimane protetta e invariata.
+                <p>Per decenni, le architetture software sono state costruite attorno al database. Questa visione non e solo superata, ma pericolosa, perche lega l'asset piu prezioso e duraturo - la logica di business - a quello piu effimero e sostituibile: la tecnologia. Le tecnologie (database, framework, UI) hanno un ciclo di vita breve, mentre le regole di business fondamentali persistono. L'idea controintuitiva, formalizzata da pattern come l'Architettura Esagonale e la Clean Architecture, e che l'architettura deve proteggere l'asset di valore da quelli usa e getta.</p>
 
-3. Abbandonate Gitflow: Il Trunk è la Chiave per la Velocità
+                <ul>
+                    <li><strong>Il modello Ports and Adapters (Architettura Esagonale)</strong> immagina il core dell'applicazione come un esagono che comunica con il mondo esterno tramite "porte" (interfacce astratte). Il database e l'interfaccia utente sono semplicemente "adattatori" che si collegano a queste porte, ma il core rimane agnostico.</li>
+                    <li><strong>La Regola della Dipendenza della Clean Architecture</strong> e ancora piu esplicita: le dipendenze puntano sempre verso l'interno. Gli strati esterni (UI, DB) dipendono dagli strati interni (Casi d'Uso, Entita), ma mai il contrario. Il business non deve sapere nulla dell'infrastruttura.</li>
+                </ul>
 
-Gitflow, con i suoi branch di lunga durata come develop, feature e release, è stato per anni lo standard de facto. Tuttavia, per i team moderni che praticano CI/CD, la sua complessità è un freno. Le feature branch che vivono per settimane generano conflitti di merge titanici ("merge hell"), rallentano i cicli di feedback e rendono la codebase perennemente instabile.
+                <p>Un esempio pratico chiarisce il potere di questo approccio. Immaginate di dover migrare da PostgreSQL a un database NoSQL. In un'architettura tradizionale, questo richiederebbe modifiche profonde in tutto il sistema. Con un'architettura pulita, il team deve solo scrivere un nuovo "adattatore" per il database nello strato piu esterno. La logica di business, il vero patrimonio aziendale, rimane protetta e invariata.</p>
 
-L'alternativa superiore è il Trunk-Based Development (TBD). Il modello è radicalmente più semplice: esiste un unico branch principale (trunk o main) e gli sviluppatori integrano il loro lavoro tramite branch di feature di brevissima durata, che esistono al massimo per qualche giorno, se non ore. I benefici sono immediati: i conflitti di merge si riducono drasticamente, i cicli di feedback sono quasi istantanei e la codebase è sempre in uno stato "rilasciabile". Persino il suo creatore, Vincent Driessen, ha di fatto ammesso che per le moderne web app con continuous delivery, Gitflow è una complicazione inutile.
+                <h3>3. Abbandonate Gitflow: Il Trunk e la Chiave per la Velocita</h3>
 
-"If your team is doing continuous delivery of software, I would suggest to adopt a much simpler workflow (like GitHub flow) instead of trying to shoehorn git-flow into your team."
+                <p>Gitflow, con i suoi branch di lunga durata come develop, feature e release, e stato per anni lo standard de facto. Tuttavia, per i team moderni che praticano CI/CD, la sua complessita e un freno. Le feature branch che vivono per settimane generano conflitti di merge titanici ("merge hell"), rallentano i cicli di feedback e rendono la codebase perennemente instabile.</p>
 
-Questa cadenza di integrazione rapida è il prerequisito culturale e tecnico per poter adottare con successo il principio "promote, never rebuild", trasformando il trunk in un nastro trasportatore di valore sempre pronto al rilascio.
+                <p>L'alternativa superiore e il Trunk-Based Development (TBD). Il modello e radicalmente piu semplice: esiste un unico branch principale (trunk o main) e gli sviluppatori integrano il loro lavoro tramite branch di feature di brevissima durata, che esistono al massimo per qualche giorno, se non ore. I benefici sono immediati: i conflitti di merge si riducono drasticamente, i cicli di feedback sono quasi istantanei e la codebase e sempre in uno stato "rilasciabile". Persino il suo creatore, Vincent Driessen, ha di fatto ammesso che per le moderne web app con continuous delivery, Gitflow e una complicazione inutile.</p>
 
-4. Il Vostro Ambiente di Sviluppo è Codice (e Non Solo un Dockerfile)
+                <blockquote>
+                    <p>"If your team is doing continuous delivery of software, I would suggest to adopt a much simpler workflow (like GitHub flow) instead of trying to shoehorn git-flow into your team."</p>
+                </blockquote>
 
-L'uso di Docker ha quasi risolto il problema del "funziona sulla mia macchina", ma spesso la configurazione dell'ambiente di sviluppo rimane un'arte oscura. Un Dockerfile definisce il runtime, ma non l'ambiente di sviluppo completo: quali estensioni dell'editor installare? Quali porte inoltrare per il debug?
+                <p>Questa cadenza di integrazione rapida e il prerequisito culturale e tecnico per poter adottare con successo il principio "promote, never rebuild", trasformando il trunk in un nastro trasportatore di valore sempre pronto al rilascio.</p>
 
-Il concetto di "development environment as code" si evolve con lo standard devcontainer.json. Questo file di configurazione, utilizzato da strumenti come VS Code Dev Containers, permette di definire un ambiente di sviluppo completo, riproducibile e versionabile. All'interno di un devcontainer.json è possibile specificare:
+                <h3>4. Il Vostro Ambiente di Sviluppo e Codice (e Non Solo un Dockerfile)</h3>
 
-* L'immagine Docker di base o il Dockerfile da utilizzare.
-* Le estensioni di VS Code che devono essere installate automaticamente.
-* Le porte da inoltrare per l'accesso ai servizi.
-* I comandi da eseguire dopo la creazione del container (postCreateCommand), come npm install.
-* E persino installare tool specifici come la CLI di Azure o Terraform tramite un sistema di "features" standardizzato.
+                <p>L'uso di Docker ha quasi risolto il problema del "funziona sulla mia macchina", ma spesso la configurazione dell'ambiente di sviluppo rimane un'arte oscura. Un Dockerfile definisce il runtime, ma non l'ambiente di sviluppo completo: quali estensioni dell'editor installare? Quali porte inoltrare per il debug?</p>
 
-Il vantaggio per i team è rivoluzionario. L'onboarding di un nuovo membro si riduce a un singolo comando che configura l'intero ambiente, identico per tutti. Il problema "funziona sulla mia macchina" viene eliminato alla radice, liberando tempo prezioso.
+                <p>Il concetto di "development environment as code" si evolve con lo standard devcontainer.json. Questo file di configurazione, utilizzato da strumenti come VS Code Dev Containers, permette di definire un ambiente di sviluppo completo, riproducibile e versionabile. All'interno di un devcontainer.json e possibile specificare:</p>
 
-5. Documentate le Decisioni, Non Solo il Codice
+                <ul>
+                    <li>L'immagine Docker di base o il Dockerfile da utilizzare.</li>
+                    <li>Le estensioni di VS Code che devono essere installate automaticamente.</li>
+                    <li>Le porte da inoltrare per l'accesso ai servizi.</li>
+                    <li>I comandi da eseguire dopo la creazione del container (postCreateCommand), come npm install.</li>
+                    <li>E persino installare tool specifici come la CLI di Azure o Terraform tramite un sistema di "features" standardizzato.</li>
+                </ul>
 
-La maggior parte dei team documenta cosa fa il codice. Ma il codice ben scritto dovrebbe essere auto-esplicativo. La documentazione più preziosa per la manutenibilità a lungo termine è quella che spiega perché una certa scelta è stata fatta.
+                <p>Il vantaggio per i team e rivoluzionario. L'onboarding di un nuovo membro si riduce a un singolo comando che configura l'intero ambiente, identico per tutti. Il problema "funziona sulla mia macchina" viene eliminato alla radice, liberando tempo prezioso.</p>
 
-Questo tipo di documentazione vive in due posti principali:
+                <h3>5. Documentate le Decisioni, Non Solo il Codice</h3>
 
-1. Le Descrizioni delle Pull Request: Una buona PR non si limita a elencare le modifiche. Deve fornire il contesto del problema, la motivazione dietro la soluzione scelta e le alternative scartate. Questo trasforma la history di Git in un archivio di decisioni.
-2. Gli Architecture Decision Records (ADRs): Per le decisioni architetturali significative (es. "perché abbiamo scelto Kafka invece di RabbitMQ?"), gli ADR sono un meccanismo formale e leggero. Un ADR cattura il contesto, le alternative considerate e la logica che ha portato alla scelta finale.
+                <p>La maggior parte dei team documenta cosa fa il codice. Ma il codice ben scritto dovrebbe essere auto-esplicativo. La documentazione piu preziosa per la manutenibilita a lungo termine e quella che spiega perche una certa scelta e stata fatta.</p>
 
-Una Pull Request ben descritta è il luogo ideale per le decisioni tattiche. Quando la discussione in una PR rivela una scelta di impatto strategico o cross-team (es. l'adozione di una nuova libreria), quello è il segnale che la decisione merita di essere formalizzata in un ADR per renderla rintracciabile e autorevole nel tempo. Questo tipo di documentazione è fondamentale per l'allineamento del team e per evitare di ripetere gli stessi errori.
+                <p>Questo tipo di documentazione vive in due posti principali:</p>
 
-6. Il Vostro Repository di Artifact è la Dogana della Vostra Supply Chain
+                <ul>
+                    <li><strong>Le Descrizioni delle Pull Request:</strong> Una buona PR non si limita a elencare le modifiche. Deve fornire il contesto del problema, la motivazione dietro la soluzione scelta e le alternative scartate. Questo trasforma la history di Git in un archivio di decisioni.</li>
+                    <li><strong>Gli Architecture Decision Records (ADRs):</strong> Per le decisioni architetturali significative (es. "perche abbiamo scelto Kafka invece di RabbitMQ?"), gli ADR sono un meccanismo formale e leggero. Un ADR cattura il contesto, le alternative considerate e la logica che ha portato alla scelta finale.</li>
+                </ul>
 
-Molti team vedono un gestore di repository di artefatti (come JFrog Artifactory) come un semplice magazzino. Questa visione è pericolosa. In una moderna supply chain del software, il repository è la dogana e la polizia di frontiera, un checkpoint di sicurezza attivo.
+                <p>Una Pull Request ben descritta e il luogo ideale per le decisioni tattiche. Quando la discussione in una PR rivela una scelta di impatto strategico o cross-team (es. l'adozione di una nuova libreria), quello e il segnale che la decisione merita di essere formalizzata in un ADR per renderla rintracciabile e autorevole nel tempo. Questo tipo di documentazione e fondamentale per l'allineamento del team e per evitare di ripetere gli stessi errori.</p>
 
-Il meccanismo chiave è l'uso di un repository remoto che funge da proxy per i registri pubblici (come Docker Hub o npm). In questa configurazione, agli sviluppatori e ai sistemi di build è impedito di scaricare dipendenze direttamente da Internet. Ogni richiesta passa attraverso il repository aziendale, che scarica la dipendenza, la memorizza nella sua cache e la serve internamente.
+                <h3>6. Il Vostro Repository di Artifact e la Dogana della Vostra Supply Chain</h3>
 
-Questo approccio offre un vantaggio di sicurezza enorme. Fornisce un punto di controllo centralizzato dove ogni dipendenza open source può essere scansionata per vulnerabilità note (CVE) e problemi di licenza prima che venga integrata nel codice. In questo modo, il repository si trasforma da semplice magazzino a un guardiano proattivo che protegge l'intero processo di sviluppo da componenti insicuri e attacchi alla supply chain.
+                <p>Molti team vedono un gestore di repository di artefatti (come JFrog Artifactory) come un semplice magazzino. Questa visione e pericolosa. In una moderna supply chain del software, il repository e la dogana e la polizia di frontiera, un checkpoint di sicurezza attivo.</p>
 
+                <p>Il meccanismo chiave e l'uso di un repository remoto che funge da proxy per i registri pubblici (come Docker Hub o npm). In questa configurazione, agli sviluppatori e ai sistemi di build e impedito di scaricare dipendenze direttamente da Internet. Ogni richiesta passa attraverso il repository aziendale, che scarica la dipendenza, la memorizza nella sua cache e la serve internamente.</p>
 
---------------------------------------------------------------------------------
+                <p>Questo approccio offre un vantaggio di sicurezza enorme. Fornisce un punto di controllo centralizzato dove ogni dipendenza open source puo essere scansionata per vulnerabilita note (CVE) e problemi di licenza prima che venga integrata nel codice. In questo modo, il repository si trasforma da semplice magazzino a un guardiano proattivo che protegge l'intero processo di sviluppo da componenti insicuri e attacchi alla supply chain.</p>
 
+                <h2>Conclusione</h2>
 
-Conclusione
+                <p>Queste sei idee condividono un tema comune: l'importanza di essere intenzionali nell'architettura, nei processi e negli strumenti per costruire un flusso di lavoro che sia non solo veloce, ma anche robusto e di alta qualita.</p>
 
-Queste sei idee condividono un tema comune: l'importanza di essere intenzionali nell'architettura, nei processi e negli strumenti per costruire un flusso di lavoro che sia non solo veloce, ma anche robusto e di alta qualità.
+                <p><strong>Quale di questi principi, se adottato domani, avrebbe l'impatto piu significativo sulla produttivita e sulla serenita del vostro team?</strong></p>
+            </div>
+        </div>
+    </section>
 
-Quale di questi principi, se adottato domani, avrebbe l'impatto più significativo sulla produttività e sulla serenità del vostro team?
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Vuoi Ottimizzare il Flusso di Lavoro del Tuo Team?</h2>
+            <p>Parliamo di come Build Minds puo aiutarti a implementare queste best practice</p>
+            <a href="../contatti.html" class="btn btn-primary">Contattaci Ora</a>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Build Minds</h3>
+                    <p>Software house specializzata in sviluppo software personalizzato per PMI italiane.</p>
+                    <p><strong>Vimercate (MB), Lombardia</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Servizi</h3>
+                    <ul class="footer-links">
+                        <li><a href="../servizi.html#software-custom">Sviluppo Software Custom</a></li>
+                        <li><a href="../servizi.html#consulenza">Consulenza Aziendale</a></li>
+                        <li><a href="../servizi.html#formazione">Formazione Tecnica</a></li>
+                        <li><a href="../servizi.html#saas">Software Proprietari</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Azienda</h3>
+                    <ul class="footer-links">
+                        <li><a href="../chi-siamo.html">Chi Siamo</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>info@buildminds.it</p>
+                    <p>+39 352 047 6725</p>
+                    <p><a href="https://linkedin.com/company/build-minds" target="_blank">LinkedIn</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Build Minds di Luca Fontana - P.IVA: 14537670961 | PEC: luca.fontana.legal@pec.it | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../cookie-policy.html">Cookie Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('mobile-open');
+        });
+    </script>
+</body>
 </html>
