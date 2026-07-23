@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Build Minds</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" type="image/jpeg" href="/assets/logo-512-negative.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="/assets/logo-512.jpg" alt="Build Minds Logo">
+                    <span>Build Minds</span>
+                </a>
+
+                <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+
+                <nav>
+                    <ul>
+                        <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+                        <li><a href="/blog/"{% if page.url == "/blog/" or "/posts/" in page.url %} class="active"{% endif %}>Blog</a></li>
+                        <li><a href="/chi-siamo/"{% if page.url == "/chi-siamo/" %} class="active"{% endif %}>Chi Siamo</a></li>
+                        <li><a href="/contatti/" class="cta-header">Contatti</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    {{ content | safe }}
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Build Minds</h3>
+                    <p>Contenuti digitali e social sul mondo tech: sviluppo software, DevOps e AI.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Naviga</h3>
+                    <ul class="footer-links">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/chi-siamo/">Chi Siamo</a></li>
+                        <li><a href="/contatti/">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>📧 <a href="mailto:info@buildminds.it">info@buildminds.it</a></p>
+                    <p>💼 <a href="https://linkedin.com/company/build-minds" target="_blank" rel="noopener">LinkedIn</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; {{ currentYear }} Build Minds di Luca Fontana - P.IVA: 14537670961 | PEC: luca.fontana.legal@pec.it | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/cookie-policy/">Cookie Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('mobile-open');
+        });
+    </script>
+</body>
+</html>

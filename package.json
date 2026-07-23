@@ -1,0 +1,25 @@
+{
+  "name": "buildminds-website",
+  "version": "1.0.0",
+  "description": "Build Minds public website and blog (Eleventy static site).",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucafont88/BuildMinds-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lucafont88/BuildMinds-Website/issues"
+  },
+  "homepage": "https://github.com/lucafont88/BuildMinds-Website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

@@ -1,0 +1,65 @@
+---
+layout: base.njk
+title: Contenuti Tech, DevOps e AI
+description: Build Minds crea contenuti digitali e social sul mondo tech, con focus su sviluppo software, DevOps e AI.
+permalink: /
+---
+<section class="hero">
+    <div class="container">
+        <h1>Contenuti Tech, Fatti Bene</h1>
+        <p>Sviluppo software, DevOps e AI raccontati per chi li usa ogni giorno</p>
+        <div class="hero-buttons">
+            <a href="/blog/" class="btn btn-primary">Leggi il Blog</a>
+            <a href="/chi-siamo/" class="btn btn-secondary">Chi Siamo</a>
+        </div>
+        <div class="hero-logo">
+            <img src="/assets/logo-512.jpg" alt="Build Minds">
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Cosa Trovi Qui</h2>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Sviluppo Software</h3>
+                <p>Guide pratiche, pattern e lezioni imparate sul campo</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>DevOps</h3>
+                <p>CI/CD, automazione e pratiche per team che rilasciano spesso</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>AI</h3>
+                <p>Strumenti e workflow AI applicati allo sviluppo reale</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container text-center">
+        <h2>Articoli Recenti</h2>
+        <div class="blog-grid">
+            {% for post in collections.posts %}
+            {% if loop.index <= 3 %}
+            <article class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-meta">📅 {{ post.data.date | readableDate }} | ⏱️ {{ post.data.readingTime }}</div>
+                    <h3>{{ post.data.title }}</h3>
+                    <p class="blog-excerpt">{{ post.data.excerpt }}</p>
+                    <a href="{{ post.url }}" class="read-more">Leggi l'articolo →</a>
+                </div>
+            </article>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

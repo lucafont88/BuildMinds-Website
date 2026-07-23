@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Blog
+description: Articoli, guide e approfondimenti su sviluppo software, DevOps e AI.
+permalink: /blog/
+---
+<section class="hero">
+    <div class="container">
+        <h1>Blog</h1>
+        <p>Sviluppo software, DevOps e AI, senza fuffa</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="blog-grid">
+            {% for post in collections.posts %}
+            <article class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-meta">📅 {{ post.data.date | readableDate }} | ⏱️ {{ post.data.readingTime }}</div>
+                    <h3>{{ post.data.title }}</h3>
+                    <p class="blog-excerpt">{{ post.data.excerpt }}</p>
+                    <a href="{{ post.url }}" class="read-more">Leggi l'articolo →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

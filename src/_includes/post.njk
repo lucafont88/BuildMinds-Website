@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<section class="hero">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        {% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="article-content">
+            <a href="/blog/" class="back-to-blog">&larr; Torna al Blog</a>
+
+            <div class="article-meta">
+                <p>{{ date | readableDate }} | {{ readingTime }}</p>
+            </div>
+
+            {{ content | safe }}
+        </div>
+    </div>
+</section>

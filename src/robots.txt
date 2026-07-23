@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucafont88.github.io/BuildMinds-Website/sitemap.xml
